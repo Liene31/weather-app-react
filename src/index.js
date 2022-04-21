@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SearchEngine from './SearchEngine';
+import CentralImage from './CentralImage';
 import "./App.css";
 
 
@@ -13,7 +14,7 @@ function App() {
             <h1>Brussels</h1>
             <h2>Wed. 03/03/2022</h2>
             <SearchEngine />
-            {/* <Image /> */}
+            <CentralImage />
             {/* <Current /> */}
           </div>
           {/* <Footer /> */}
