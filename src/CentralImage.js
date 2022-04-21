@@ -7,8 +7,7 @@ export default function CentralImage() {
       <img
         className="central-image"
         src={require("./01d.png")}
-        alt="sun"
-        id="weather-icon"
+        alt="sun"        
       />
     </div>);
 }
