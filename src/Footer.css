@@ -1,0 +1,10 @@
+.Footer {
+    font-size: 12px;
+    font-family: "Lora", serif;
+    text-align: center;
+    font-weight: 500;
+}
+
+.Footer a {
+    text-decoration: none;
+}

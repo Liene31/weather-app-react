@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import SearchEngine from './SearchEngine';
 import CentralImage from './CentralImage';
 import CurrentWeather from './CurrentWeather';
+import Footer from './Footer';
 import "./App.css";
 
 
@@ -18,7 +19,7 @@ function App() {
             <CentralImage />
             <CurrentWeather />
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </div>
