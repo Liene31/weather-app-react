@@ -1,0 +1,28 @@
+.SearchEngine form {
+    text-align: center;
+}
+
+.SearchEngine input {
+    border-radius: 10px;
+    margin-bottom: 5px;
+    outline: none;
+    font-family: "Lora", serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+.SearchEngine button {
+    border: none;
+    background: none;
+}
+
+.SearchEngine .location {
+    color: #5a5560;
+    padding-right: 5px;
+}
+
+.SearchEngine .location:hover {
+    cursor: pointer;
+}

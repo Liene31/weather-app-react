@@ -1,8 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import SearchEngine from './SearchEngine';
+import "./App.css";
+
+
+function App() {
+  return (
+    <div className="App">
+      <div className="container">
+        <div className="app-container">
+          <div className="weather-wrap">
+            <h1>Brussels</h1>
+            <h2>Wed. 03/03/2022</h2>
+            <SearchEngine />
+            {/* <Image /> */}
+            {/* <Current /> */}
+          </div>
+          {/* <Footer /> */}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +31,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
