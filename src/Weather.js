@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import axios from "axios";
 
 export default function Weather() {
   return (
@@ -28,15 +29,9 @@ export default function Weather() {
 
           <div className="col description">
             <ul>
-              <li>
-                <span>Sunny</span>
-              </li>
-              <li>
-                Humidity: <span>20%</span>
-              </li>
-              <li>
-                Wind: <span>5 km/h</span>
-              </li>
+              <li>Sunny</li>
+              <li>Humidity: 20%</li>
+              <li>Wind: 5 km/h</li>
             </ul>
           </div>
         </div>
