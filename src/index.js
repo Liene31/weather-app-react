@@ -9,8 +9,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
+    <div className="App">      
         <div className="app-container">
           <div className="weather-wrap">
             <h1>Brussels</h1>
@@ -21,8 +20,7 @@ function App() {
           </div>
           <Footer />
         </div>
-      </div>
-    </div>
+      </div>    
   );
 }
 
