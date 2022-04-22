@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 export default function Footer() {
-    return(
+  return (
     <span className="Footer">
       <a
         href="https://github.com/Liene31/weather-app-react"
@@ -12,5 +12,6 @@ export default function Footer() {
         Open-source code
       </a>{" "}
       by LieneB
-    </span>);
+    </span>
+  );
 }
