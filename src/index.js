@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.css';
 import SearchEngine from './SearchEngine';
 import CentralImage from './CentralImage';
 import CurrentWeather from './CurrentWeather';
@@ -9,7 +10,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">      
+    <div className="App">
+      <div className="container">
         <div className="app-container">
           <div className="weather-wrap">
             <h1>Brussels</h1>
@@ -20,7 +22,8 @@ function App() {
           </div>
           <Footer />
         </div>
-      </div>    
+      </div>
+    </div>
   );
 }
 
