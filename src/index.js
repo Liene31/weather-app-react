@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
-import SearchEngine from './SearchEngine';
-import CentralImage from './CentralImage';
-import CurrentWeather from './CurrentWeather';
+import Weather from './Weather';
 import Footer from './Footer';
 import "./App.css";
 
@@ -13,12 +11,8 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="app-container">
-          <div className="weather-wrap">
-            <h1>Brussels</h1>
-            <h2>Wed. 03/03/2022</h2>
-            <SearchEngine />
-            <CentralImage />
-            <CurrentWeather />
+          <div className="weather-wrap">    
+          <Weather />                    
           </div>
           <Footer />
         </div>
