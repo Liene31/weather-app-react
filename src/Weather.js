@@ -11,6 +11,9 @@ export default function Weather() {
     setWeather({
       city: response.data.name,
       temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
     });
     setReady(true);
   }
@@ -46,9 +49,9 @@ export default function Weather() {
 
             <div className="col description">
               <ul>
-                <li>Sunny</li>
-                <li>Humidity: 20%</li>
-                <li>Wind: 5 km/h</li>
+                <li>{weather.description}</li>
+                <li>Humidity: {weather.humidity}%</li>
+                <li>Wind: {weather.wind} km/h</li>
               </ul>
             </div>
           </div>
