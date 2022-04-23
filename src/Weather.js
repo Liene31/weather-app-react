@@ -3,6 +3,13 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+  const apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
+  axios.get(url).then(handleResponse);
+
   return (
     <div className="Weather">
       <h1>Brussels</h1>
