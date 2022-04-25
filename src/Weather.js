@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
+import "./Weather.css";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -15,6 +16,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.dt * 1000),
     });
     setReady(true);
   }
@@ -23,7 +25,9 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <h1>{weather.city}</h1>
-        <h2>Wed. 03/03/2022</h2>
+        <h2>
+          <FormattedDate date={weather.date} />
+        </h2>
 
         <form>
           <i className="fa fa-map-marker location"></i>
