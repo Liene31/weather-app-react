@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState(null);
 
@@ -10,10 +10,11 @@ export default function Weather() {
     console.log(response.data);
     setWeather({
       city: response.data.name,
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
     setReady(true);
   }
@@ -37,7 +38,11 @@ export default function Weather() {
         </form>
 
         <div>
-          <img className="central-image" src={require("./01d.png")} alt="sun" />
+          <img
+            className="central-image"
+            src={weather.icon}
+            alt={weather.description}
+          />
         </div>
 
         <div>
@@ -49,7 +54,7 @@ export default function Weather() {
 
             <div className="col description">
               <ul>
-                <li>{weather.description}</li>
+                <li className="weather-description">{weather.description}</li>
                 <li>Humidity: {weather.humidity}%</li>
                 <li>Wind: {weather.wind} km/h</li>
               </ul>
@@ -60,7 +65,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(handleResponse);
 
     return "Loading...";

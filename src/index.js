@@ -12,7 +12,7 @@ function App() {
       <div className="container">
         <div className="app-container">
           <div className="weather-wrap">    
-          <Weather />                    
+          <Weather city={"Brussels"}/>                    
           </div>
           <Footer />
         </div>

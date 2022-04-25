@@ -66,6 +66,10 @@
     top: -45px;
 }
 
+.Weather .weather-description {
+    text-transform: capitalize;
+}
+
 .description ul {
     list-style: none;
     padding: 0;
@@ -76,3 +80,5 @@
     line-height: 2;
     font-style: italic;
 }
+
+
