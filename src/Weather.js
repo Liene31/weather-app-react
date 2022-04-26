@@ -5,6 +5,7 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     console.log(response.data);
@@ -20,15 +21,31 @@ export default function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function getCity(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
   if (weather.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <i className="fa fa-map-marker location"></i>
           <input
             type="search"
             placeholder="Search For City"
             autoComplete="off"
+            onChange={getCity}
           />
           <button>
             <i className="fa fa-search search-icon"></i>
@@ -38,10 +55,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
