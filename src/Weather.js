@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import WeatherData from "./WeatherData";
 import "./Weather.css";
 
@@ -8,7 +9,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeather({
       ready: true,
       city: response.data.name,
@@ -39,6 +39,11 @@ export default function Weather(props) {
   if (weather.ready) {
     return (
       <div className="Weather">
+        <h1>{weather.city}</h1>
+        <h2>
+          <FormattedDate date={weather.date} />
+        </h2>
+
         <form onSubmit={handleSubmit}>
           <i className="fa fa-map-marker location"></i>
           <input

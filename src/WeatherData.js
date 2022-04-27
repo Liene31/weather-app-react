@@ -1,13 +1,8 @@
 import React from "react";
-import FormattedDate from "./FormattedDate";
 
 export default function WeatherData(props) {
   return (
     <div>
-      <h1>{props.data.city}</h1>
-      <h2>
-        <FormattedDate date={props.data.date} />
-      </h2>
       <div>
         <img
           className="central-image"
