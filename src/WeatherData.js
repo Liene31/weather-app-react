@@ -1,4 +1,5 @@
 import React from "react";
+import Temperature from "./Temperature";
 
 export default function WeatherData(props) {
   return (
@@ -14,8 +15,8 @@ export default function WeatherData(props) {
       <div>
         <div className="row">
           <div className="col-6 temperature">
-            <span>{props.data.temperature}</span>
-            <span className="units"> °C </span>
+            <Temperature celsius={props.data.temperature}/>
+            
           </div>
 
           <div className="col description">
