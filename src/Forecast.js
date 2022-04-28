@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Forecast.css";
 
 export default function Forecast(props) {
+  const [day, setDay] = useState(null);
+
   function handleResponse(response) {
-    console.log(response.data.daily);
+    console.log(response.data);
+    setDay({
+      tempMax: Math.round(response.data.daily[0].temp.max),
+      tempMin: Math.round(response.data.daily[0].temp.min),
+      icon: response.data.daily[0].weather.icon,
+      description: response.data.daily[0].weather.description,
+    });
   }
 
   const apiKey = `7f7b212e480de247710aebbd9f9c68bd`;
@@ -23,12 +31,13 @@ export default function Forecast(props) {
           <div className="icon">
             <img
               className="central-image"
-              src={props.data.icon}
-              alt={props.data.description}
+              src={day.icon}
+              alt={day.description}
             />
           </div>
           <div className="current-temperature">
-            <span className="max">18°</span>| <span className="min">5°</span>
+            <span className="max">{day.tempMax}°</span>|{" "}
+            <span className="min">{day.tempMin}°</span>
           </div>
         </div>
       </div>
