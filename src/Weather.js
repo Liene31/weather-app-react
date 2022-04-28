@@ -19,6 +19,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
 
@@ -57,7 +58,7 @@ export default function Weather(props) {
           </button>
         </form>
         <WeatherData data={weather} />
-        <Forecast data={weather} />
+        <Forecast data={weather} coordinates={weather.coordinates} />
       </div>
     );
   } else {
