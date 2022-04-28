@@ -36,12 +36,6 @@
     cursor: pointer;
 }
 
-.Weather .central-image {
-    display: block;
-    margin: 15px auto;
-    width: 200px;
-}
-
 .Weather .temperature {
     text-align: right;
     font-family: "Lora", serif;

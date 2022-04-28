@@ -1,14 +1,15 @@
 import React from "react";
 import Temperature from "./Temperature";
+import "./WeatherData.css"
 
 export default function WeatherData(props) {
   return (
-    <div>
+    <div className="WeatherData">
       <div>
         <img
           className="central-image"
           src={props.data.icon}
-          alt={props.data.description}
+          alt={props.data.description}          
         />
       </div>
 
