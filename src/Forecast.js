@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 
 export default function Forecast(props) {
   const [forecast, setForecast] = useState(null);
-  const [load, setload] = useState(false);
+  const [load, setLoad] = useState(false);
 
   function handleResponse(response) {
     console.log(response.data);
     setForecast(response.data.daily);
-    setload(true);
+    setLoad(true);
   }
+
+  useEffect(() => {
+    setLoad(false);
+  }, [props.coordinates]);
 
   if (load) {
     return (
@@ -20,7 +24,7 @@ export default function Forecast(props) {
           {forecast.map(function (forecastDaily, index) {
             if (index < 6) {
               return (
-                <div className="col-2 daily-forecast" key={index}>
+                <div className="col-sm-2 daily-forecast" key={index}>
                   <ForecastDay forecastData={forecastDaily} />
                 </div>
               );

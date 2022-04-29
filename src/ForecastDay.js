@@ -16,7 +16,7 @@ export default function ForecastDay(props) {
         />
       </div>
       <div className="current-temperature">
-        <span className="max">{Math.round(props.forecastData.temp.max)}°</span>|
+        <span className="max">{Math.round(props.forecastData.temp.max)}°</span>|{" "}
         <span className="min">{Math.round(props.forecastData.temp.min)}°</span>
       </div>
     </div>
