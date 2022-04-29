@@ -47,6 +47,7 @@ export default function Weather(props) {
         </h2>
 
         <form onSubmit={handleSubmit}>
+          <i className="fa fa-map-marker location"></i>
           <input
             type="search"
             placeholder="Search For City"
