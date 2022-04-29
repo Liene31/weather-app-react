@@ -1,11 +1,12 @@
 import React from "react";
+import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
   let date = new Date(props.forecastData.dt * 1000);
   let daysShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = daysShort[date.getDay()];
   return (
-    <div>
+    <div className="ForecastDay">
       <div className="day">{day}</div>
       <div className="icon">
         <img
