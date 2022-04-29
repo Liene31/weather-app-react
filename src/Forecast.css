@@ -12,3 +12,6 @@
   width: 25px;
 }
 
+.Forecast .daily-forecast {
+  padding: 0;
+}
